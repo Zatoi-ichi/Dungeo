@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Dungeon</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:wght@500;700&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/index.css"/>
+    </head>
+    <body>
+        <div id="page" class="centerContent">
+            <h1 class="title"><span class="ornament">⚔</span> Dungeon <span class="ornament">⚔</span></h1>
+
+            <div class="arena">
+                <div class="fighter">
+                    <div id="heroSprite" class="sprite hero idle"></div>
+                    <span id="healPopup" class="healPopup"></span>
+                    <div class="nameplate">
+                        <div class="nameplateHeader">
+                            <span class="name">Herói</span>
+                            <span id="exhaustedTag" class="statusTag" hidden>💤 Exausto</span>
+                        </div>
+                        <div class="stats">
+                            <div class="statRow">
+                                <span class="statLabel"><span class="statIcon">♥</span>Vida</span>
+                                <div class="lifeBarStyle"><div id="heroLifeBar" class="lifeFill"></div></div>
+                                <span id="heroLifeText" class="statValue lifeText">200 / 200</span>
+                            </div>
+                            <div class="statRow">
+                                <span class="statLabel"><span class="statIcon">✦</span>Mana</span>
+                                <div class="lifeBarStyle"><div id="heroManaBar" class="manaFill"></div></div>
+                                <span id="heroManaText" class="statValue">100 / 100</span>
+                            </div>
+                            <div id="heroFatigueRow" class="statRow">
+                                <span class="statLabel"><span class="statIcon">⚡</span>Fadiga</span>
+                                <div class="lifeBarStyle"><div id="heroFatigueBar" class="fatigueFill"></div></div>
+                                <span id="heroFatigueText" class="statValue">100 / 100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fighter">
+                    <div id="slimeSprite" class="sprite slime idle"></div>
+                    <div class="nameplate">
+                        <div class="nameplateHeader">
+                            <span class="name">Slime</span>
+                        </div>
+                        <div class="stats">
+                            <div class="statRow">
+                                <span class="statLabel"><span class="statIcon">♥</span>Vida</span>
+                                <div class="lifeBarStyle"><div id="slimeLifeBar" class="lifeFill"></div></div>
+                                <span id="slimeLifeText" class="statValue lifeText">300 / 300</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p id="message" class="scroll">Um Slime bloqueia o caminho!</p>
+            <p id="statusBanner" class="banner" hidden>💤 Herói exausto! <strong>Atacar</strong> e <strong>Curar</strong> estão indisponíveis. Use <strong>Comida</strong> para recuperar a Fadiga.</p>
+
+            <div class="actions">
+                <button id="hitButton" class="buttonStyle" title="Ataca o Slime e gasta Fadiga">
+                    <span class="btnIcon">⚔</span>
+                    <span class="btnText">
+                        <span class="btnLabel">Atacar</span>
+                        <span id="hitHint" class="btnHint">50 de dano · −20 Fadiga</span>
+                    </span>
+                </button>
+                <button id="healButton" class="buttonStyle healButton" title="Recupera Vida (usos limitados)">
+                    <span class="btnIcon">✚</span>
+                    <span class="btnText">
+                        <span class="btnLabel">Curar</span>
+                        <span id="healHint" class="btnHint">+40 Vida · 3 usos</span>
+                    </span>
+                </button>
+                <button id="foodButton" class="buttonStyle foodButton" title="Come para recuperar Fadiga">
+                    <span class="btnIcon">🍖</span>
+                    <span class="btnText">
+                        <span class="btnLabel">Comida</span>
+                        <span id="foodHint" class="btnHint">+30 Fadiga</span>
+                    </span>
+                </button>
+            </div>
+
+            <button id="restartButton" class="buttonStyle restartButton" hidden>↻ JOGAR NOVAMENTE</button>
+        </div>
+        <script src="js/Event.js"></script>
+        <script src="js/Hero.js"></script>
+        <script src="js/Slime.js"></script>
+        <script src="js/InterfaceManager.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
